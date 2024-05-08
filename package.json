@@ -1,0 +1,32 @@
+{
+  "name": "ts-mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "preserve": "npm run build",
+    "serve": "cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
+    "prestart": "npm run build",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "rimraf": "^5.0.5"
+  }
+}
